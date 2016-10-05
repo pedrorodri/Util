@@ -24,11 +24,18 @@
 
 	<dependencies>
 
+		<!-- REST -->
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxrs</artifactId>
 			<version>3.0.13.Final</version>
 			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>async-http-servlet-3.0</artifactId>
+			<version>3.0.19.Final</version>
 		</dependency>
 
 		<dependency>
@@ -63,6 +70,20 @@
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-client</artifactId>
 			<version>3.0.13.Final</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-links</artifactId>
+			<version>3.0.19.Final</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.2.4.Final</version>
 			<scope>compile</scope>
 		</dependency>
 
@@ -109,6 +130,48 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.1.1.Final</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.3.0.Final</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.0.Final</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.0.Final</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-java8</artifactId>
+			<version>5.0.0.Final</version>
+		</dependency>
+
 	</dependencies>
 
 	<distributionManagement>
@@ -130,16 +193,17 @@
 					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
 					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
 					<branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
-					
+
 					<includes>
 						<include>**/*</include>
 					</includes>
-					
+
 					<repositoryName>Util</repositoryName>      <!-- github repo name -->
 					<repositoryOwner>pedrorodri</repositoryOwner>    <!-- github username -->
 				</configuration>
 				<executions>
-					<!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+					<!-- run site-maven-plugin's 'site' target as part of the build's normal 
+						'deploy' phase -->
 					<execution>
 						<goals>
 							<goal>site</goal>
