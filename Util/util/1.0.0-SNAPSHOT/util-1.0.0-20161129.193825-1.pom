@@ -73,7 +73,7 @@
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-validator-provider-11</artifactId>
 			<version>3.0.16.Final</version>
-			<scope>runtime</scope>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
